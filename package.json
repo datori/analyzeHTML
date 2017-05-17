@@ -1,0 +1,15 @@
+{
+  "name": "analyzehtml",
+  "version": "0.0.0",
+  "description": "Parse HTML tree structure, generate statistics and visualizations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(git://github.com/daniel75027/analyzeHTML.git)"
+  },
+  "author": "Daniel Serratore <daniel75027@gmail.com>",
+  "license": "MIT"
+}
