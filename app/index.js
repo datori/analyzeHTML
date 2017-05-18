@@ -1,21 +1,7 @@
 'use strict';
-var fs = require('fs')
-fs.readFile("test.html", "utf8", function(err,data){
-	if (err != true){
-		var tags = data.match(/<.*?>/gi);
-		var height = 0;
-		tags.forEach(function(tag){
-			if (tag.match(/<\/.*>/i)){
-				height--;
-			}
-			else{
-				height++;
-			}
-			console.log("+".repeat(height));
-		})
+var React = require("react");
+var ReactDOM = require("react-dom");
+var App = require("./components/App");
+require('./index.css');
 
-	}
-	else{
-		console.log(err);
-	}
-});
+ReactDOM.render(<App />, document.getElementById("app"));

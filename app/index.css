@@ -1,0 +1,36 @@
+body{
+	background-color: rgb(240,240,240);
+}
+h1{
+	text-align: center;
+}
+ul{	
+	padding: 0;
+}
+li{
+	list-style-type: none;
+	height: calc(100% / 50);
+}
+textarea{
+	width: 100%;
+	height: 20%;
+}
+button, textarea{
+	display: block;
+	margin: 10px auto;
+}
+.container{
+	height: 100%;
+}
+.input-group{
+	width: 75%;
+	margin: 10px auto;
+}
+.visualization{
+	max-height: 50%;
+	max-width: 75%;
+	margin: 0 auto;
+	overflow: scroll;
+	border: 1px solid black;
+	border-radius: 1px;
+}
