@@ -4,27 +4,14 @@ var Chart = require('chart.js');
 class Analyzer extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = {
-			HTML: ""
-		}
 
 		// Make sure methods are always called with correct context.
-		this.updateHTML = this.updateHTML.bind(this);
 		this.renderGraph = this.renderGraph.bind(this);
-	}
-
-	updateHTML(){
-		this.setState(function(){
-			return {
-				HTML: document.getElementById("htmlInput").value
-			}
-		});
-		this.renderGraph();
 	}
 
 	renderGraph(){
 		// Generate array of height points of HTML.
-		var tags = this.state.HTML.match(/<.*?>/gi);
+		var tags = document.getElementById("htmlInput").value.match(/<.*?>/gi);
 		var height = 0;
 		var height_points = [0];
 		tags.forEach(function(tag){
@@ -37,8 +24,7 @@ class Analyzer extends React.Component{
 			height_points.push(height);
 		});
 		// Canvas
-		var ctx = "dataChart";
-		var dataChart = new Chart(ctx, {
+		var dataChart = new Chart("dataChart", {
 		    type: 'line',
 		    data: {
 		    	// Each data point must have a corresponding label, so we generate an array of empty labels for the length of the data set.
@@ -46,7 +32,7 @@ class Analyzer extends React.Component{
 		        datasets: [{
 		            label: 'HTML Layers',
 		            data: height_points,
-		            lineTension: 0.1
+		            lineTension: 0.2
 		           
 		        }]
 		    },
@@ -72,7 +58,7 @@ class Analyzer extends React.Component{
 				</div>
 				<div className="input-group">
 					<textarea id="htmlInput"></textarea>
-					<button onClick={this.updateHTML}>Analyze</button>
+					<button onClick={this.renderGraph}>Analyze</button>
 				</div>
 			</div>
 		)
