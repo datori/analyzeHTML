@@ -19,6 +19,7 @@
   "author": "Daniel Serratore <daniel75027@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chart.js": "^2.5.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },

@@ -19,6 +19,12 @@ button, textarea{
 	display: block;
 	margin: 10px auto;
 }
+canvas{
+	height: 50%;
+	width: 75%;
+	display: block;
+	margin: 10px auto;
+}
 .container{
 	height: 100%;
 }
