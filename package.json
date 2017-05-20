@@ -4,6 +4,7 @@
   "description": "Parse HTML tree structure, generate statistics and visualizations.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack -p",
     "start": "webpack-dev-server --open"
   },
   "babel": {

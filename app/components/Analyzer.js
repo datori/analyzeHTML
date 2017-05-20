@@ -79,7 +79,7 @@ class Analyzer extends React.Component{
 
 	renderGraph(){
 		// Generate array of height points of HTML.
-		var tags = document.getElementById("htmlInput").value.match(/<.*?>/gi);
+		var tags = document.getElementById("htmlInput").value.match(/<(?!!--).*?>/gi);
 		var height = 0;
 		var height_points = [0];
 		tags.forEach(function(tag){
