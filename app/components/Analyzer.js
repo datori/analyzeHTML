@@ -1,14 +1,33 @@
 var React = require("react");
+var PropTypes = require("prop-types");
 var Chart = require('chart.js');
+
+function InputGroup(props){
+	return(
+		<div className="input-group">
+			<textarea id="htmlInput"></textarea>
+			<button onClick={props.renderGraph}>Analyze</button>
+		</div>
+	)
+}
+InputGroup.propTypes = {
+	renderGraph: PropTypes.func.isRequired
+}
+
+function Visualization(){
+	return(
+		<div className="visualization">
+			<canvas id="dataChart"></canvas>
+		</div>
+	)
+}
 
 class Analyzer extends React.Component{
 	constructor(props){
 		super(props);
-
 		this.state = {
 			graph: false
 		}
-
 		// Make sure method is always called with correct context.
 		this.renderGraph = this.renderGraph.bind(this);
 	}
@@ -16,13 +35,8 @@ class Analyzer extends React.Component{
 	render(){
 		return(
 			<div className="container">
-				<div className="visualization">
-					<canvas id="dataChart"></canvas>
-				</div>
-				<div className="input-group">
-					<textarea id="htmlInput"></textarea>
-					<button onClick={this.renderGraph}>Analyze</button>
-				</div>
+				<Visualization />
+				<InputGroup renderGraph={this.renderGraph} />
 			</div>
 		)
 	}
@@ -33,22 +47,28 @@ class Analyzer extends React.Component{
 		    data: {
 		        labels: [],
 		        datasets: [{
-		            label: 'HTML Layers',
+		            label: '',
 		            data: [],
-		            lineTension: 0.2
+		            lineTension: 0.5,
+		            backgroundColor: '#6ec6ff'
 		        }]
 		    },
 		    options: {
 		    	responsive: true,
+		    	legend: {
+		    		display: false
+		    	},
 		        scales: {
 		            yAxes: [{
 		                ticks: {
 		                    beginAtZero: true,
-		                    fixedStepSize: 1
+		                    fixedStepSize: 1,
+		                    fontSize: 20
 		                },
 		                scaleLabel:{
 		                	display: true,
-		                	labelString: "Layers"
+		                	labelString: "Layers",
+		                	fontSize: 30
 		                }
 		            }]
 		        }
