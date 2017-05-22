@@ -49,7 +49,7 @@ class Analyzer extends React.Component{
 		        datasets: [{
 		            label: '',
 		            data: [],
-		            lineTension: 0.5,
+		            lineTension: 0.2,
 		            backgroundColor: '#6ec6ff'
 		        }]
 		    },
@@ -64,11 +64,6 @@ class Analyzer extends React.Component{
 		                    beginAtZero: true,
 		                    fixedStepSize: 1,
 		                    fontSize: 20
-		                },
-		                scaleLabel:{
-		                	display: true,
-		                	labelString: "Layers",
-		                	fontSize: 30
 		                }
 		            }]
 		        }

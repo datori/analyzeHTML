@@ -49,7 +49,7 @@ table {
 
 /* <--Structural--> */
 body{
-	background-color: rgb(250,250,250 );
+	background-color: rgb(250,250,250);
 }
 nav{
 	padding: 10px;
@@ -75,7 +75,7 @@ canvas{
 }
 /* Input */
 .input-group{
-	width: 50%;
+	max-width: 1000px;
 	margin: 10px auto;
 }
 button, textarea{
