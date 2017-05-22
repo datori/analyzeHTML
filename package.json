@@ -2,10 +2,12 @@
   "name": "analyzehtml",
   "version": "0.0.0",
   "description": "Parse HTML tree structure, generate statistics and visualizations.",
+  "homepage": "https://daniel75027.github.io/analyzeHTML",
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "deploy": "npm run build&&gh-pages -d build"
   },
   "babel": {
     "presets": [
