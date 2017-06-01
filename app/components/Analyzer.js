@@ -78,7 +78,7 @@ class Analyzer extends React.Component{
 		var height = 0;
 		var height_points = [0];
 		tags.forEach(function(tag){
-			if (tag.match(/<(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)+.*>/i)){
+			if (tag.match(/<(area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr|!DOCTYPE)+.*>/i)){
 				// Keep same height for void tags.
 			}
 			else if (tag.match(/<\/.*>/i)){

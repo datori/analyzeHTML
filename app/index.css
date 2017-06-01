@@ -55,7 +55,7 @@ nav{
 	padding: 10px;
 	background-color: #03a9f4;
 }
-.container{
+.container,.app{
 	height: 100%;
 }
 /* Chart */
